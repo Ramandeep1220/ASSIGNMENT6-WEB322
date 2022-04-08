@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Posts</h2>
+		<a href="/posts/add" class="btn btn-success pull-right">Add
+Post</a>
+        <hr />
+
+        <div class="table-responsive">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Post&nbsp;Id</th>
+						<th>Title</th>
+						<th>Post Date</th>
+						<th>Category</th>
+                        <th>Published</th>
+						<th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each post}}
+                    <tr>
+                        <td><a href="/posts?post={{id}}">{{id}}</a></td>
+						<td><a href="/posts?post={{title}}">{{title}}</a></td>
+						<td><a href="/posts?post={{postDate}}">{{postDate}}</a></td>
+						<td><a href="/posts?post={{category}}">{{category}}</a></td>
+                        <td><a href="/posts?post={{published}}">{{published}}</a></td>
+						<td>
+						<td><a class="btn btn-danger" href="post/delete/id={{id}}"></a></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{#unless posts}}
+            <div class="col-md-12 text-center">
+                <strong>{{message}}</strong>
+            </div>
+        {{/unless}}
+    </div>
+</div>
